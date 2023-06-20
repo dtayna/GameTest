@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=3 uid="uid://dy4quvsrh5weq"]
+
+[ext_resource type="PackedScene" uid="uid://bifa0t42rpne4" path="res://larger_platform.tscn" id="1_u8m6g"]
+[ext_resource type="PackedScene" uid="uid://df5dv8qoamj80" path="res://smaller_platform.tscn" id="2_slmwx"]
+[ext_resource type="PackedScene" uid="uid://bkrgu4860xrhi" path="res://larger_thorns.tscn" id="2_vvfhm"]
+[ext_resource type="PackedScene" uid="uid://lmrrgqkkgm6" path="res://cacto.tscn" id="2_x5dn7"]
+[ext_resource type="PackedScene" uid="uid://cegfrbo1iiuiv" path="res://player.tscn" id="3_5v8p7"]
+[ext_resource type="PackedScene" uid="uid://8hph5wrq71y0" path="res://thorns.tscn" id="4_suk53"]
+[ext_resource type="PackedScene" uid="uid://d1r3wdftdkrfv" path="res://parallax_background.tscn" id="7_sre0p"]
+[ext_resource type="PackedScene" uid="uid://bnu4vvfmey1n1" path="res://chaoteste.tscn" id="8_pmay8"]
+[ext_resource type="PackedScene" uid="uid://ditglr3l44bdc" path="res://stone.tscn" id="9_hejig"]
+[ext_resource type="PackedScene" uid="uid://b5dujjhbdmdm6" path="res://money.tscn" id="10_2pxsl"]
+[ext_resource type="PackedScene" uid="uid://c2w4vc3fovrk6" path="res://helio.tscn" id="11_753xu"]
+
+[node name="level_1" type="Node2D"]
+light_mask = 3
+visibility_layer = 3
+
+[node name="thorns" parent="." instance=ExtResource("4_suk53")]
+position = Vector2(1168, 663)
+
+[node name="cacto" parent="." instance=ExtResource("2_x5dn7")]
+position = Vector2(2787, 308)
+
+[node name="larger_thorns" parent="." instance=ExtResource("2_vvfhm")]
+position = Vector2(1929, 301)
+
+[node name="larger_platform" parent="." instance=ExtResource("1_u8m6g")]
+position = Vector2(2239, 603)
+
+[node name="smaller_platform" parent="." instance=ExtResource("2_slmwx")]
+position = Vector2(1176, 628)
+
+[node name="smaller_platform2" parent="." instance=ExtResource("2_slmwx")]
+position = Vector2(841, 728)
+
+[node name="larger_platform2" parent="." instance=ExtResource("1_u8m6g")]
+position = Vector2(2714, 419)
+
+[node name="larger_platform3" parent="." instance=ExtResource("1_u8m6g")]
+position = Vector2(1929, 265)
+
+[node name="player" parent="." instance=ExtResource("3_5v8p7")]
+position = Vector2(462, 632)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("7_sre0p")]
+
+[node name="chaoteste" parent="." instance=ExtResource("8_pmay8")]
+position = Vector2(-6, 873)
+
+[node name="cacto2" parent="." instance=ExtResource("2_x5dn7")]
+position = Vector2(2539, 789)
+
+[node name="stone" parent="." instance=ExtResource("9_hejig")]
+position = Vector2(1206, 946)
+
+[node name="stone2" parent="." instance=ExtResource("9_hejig")]
+position = Vector2(833, 1013)
+
+[node name="stone3" parent="." instance=ExtResource("9_hejig")]
+position = Vector2(4791, 962)
+
+[node name="stone4" parent="." instance=ExtResource("9_hejig")]
+position = Vector2(1815, 982)
+
+[node name="chaoteste2" parent="." instance=ExtResource("8_pmay8")]
+position = Vector2(1921, 873)
+
+[node name="money" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(1121, 535)
+
+[node name="money2" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(780, 639)
+
+[node name="money3" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(2024, 174)
+
+[node name="chaoteste3" parent="." instance=ExtResource("8_pmay8")]
+position = Vector2(3867, 875)
+
+[node name="chaoteste4" parent="." instance=ExtResource("8_pmay8")]
+position = Vector2(5784, 875)
+
+[node name="chaoteste5" parent="." instance=ExtResource("8_pmay8")]
+position = Vector2(7689, 868)
+
+[node name="stone5" parent="." instance=ExtResource("9_hejig")]
+position = Vector2(2428, 942)
+
+[node name="stone6" parent="." instance=ExtResource("9_hejig")]
+position = Vector2(3311, 986)
+
+[node name="stone7" parent="." instance=ExtResource("9_hejig")]
+position = Vector2(4353, 916)
+
+[node name="money4" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(2327, 545)
+
+[node name="money5" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(2619, 345)
+
+[node name="larger_platform4" parent="." instance=ExtResource("1_u8m6g")]
+position = Vector2(1619, 487)
+
+[node name="money6" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(1518, 430)
+
+[node name="money7" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(1727, 430)
+
+[node name="helio" parent="." instance=ExtResource("11_753xu")]
+position = Vector2(3375, 799)
+
+[node name="money8" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(3361, 557)
+
+[node name="money9" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(3361, 446)
+
+[node name="money10" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(3373, 338)
+
+[node name="money11" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(3364, 221)
+
+[node name="larger_platform5" parent="." instance=ExtResource("1_u8m6g")]
+position = Vector2(3637, 259)
+
+[node name="helio2" parent="." instance=ExtResource("11_753xu")]
+position = Vector2(-105, 513)

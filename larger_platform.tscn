@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bifa0t42rpne4"]
+
+[ext_resource type="Texture2D" uid="uid://ckg2642jrjwrr" path="res://assets/IMG_0284.PNG" id="1_lcoui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pxnv"]
+size = Vector2(285, 42)
+
+[node name="larger_platform" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_4pxnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lcoui")
+region_enabled = true
+region_rect = Rect2(777.789, 777.289, 304.879, 63.888)

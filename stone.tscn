@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ditglr3l44bdc"]
+
+[ext_resource type="Texture2D" uid="uid://ckg2642jrjwrr" path="res://assets/IMG_0284.PNG" id="1_mw7eg"]
+
+[node name="stone" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mw7eg")
+region_enabled = true
+region_rect = Rect2(830.479, 884.595, 135.259, 87.0729)

@@ -1,0 +1,159 @@
+[gd_scene load_steps=13 format=3 uid="uid://cegfrbo1iiuiv"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_vl503"]
+[ext_resource type="Texture2D" uid="uid://d37vd4l8wt8kk" path="res://assets/teste.webp" id="2_ugaeb"]
+[ext_resource type="Texture2D" uid="uid://b4i631a2t71l" path="res://character_maleAdventurer_sheet.png" id="2_wybgc"]
+[ext_resource type="Texture2D" uid="uid://ckg2642jrjwrr" path="res://assets/IMG_0284.PNG" id="3_hoq30"]
+[ext_resource type="Texture2D" uid="uid://b1ysk7dr0uuvc" path="res://assets/IMG-0239.PNG" id="4_jvfkm"]
+[ext_resource type="Texture2D" uid="uid://55ek5vdm4ywf" path="res://assets/IMG_0283.PNG" id="4_k6jbd"]
+[ext_resource type="Texture2D" uid="uid://cxgx6kh2tdmug" path="res://assets/IMG-0240.PNG" id="5_0vnaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8pda"]
+size = Vector2(34, 218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1buxr"]
+atlas = ExtResource("2_wybgc")
+region = Rect2(384, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yehfw"]
+atlas = ExtResource("2_wybgc")
+region = Rect2(768, 512, 96, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvtx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1buxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yehfw")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jvfkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0vnaj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0vnaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jvfkm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_iwj73"]
+offsets = PackedFloat32Array(0, 0.522124, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.883865, 0.795793, 0.164198, 1, 0.809375, 0, 0.129402, 1)
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_vl503")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_e8pda")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture_filter = 5
+position = Vector2(-6.49999, 1.52588e-05)
+scale = Vector2(1.25567, 0.933051)
+color = Color(0.976471, 0.976471, 0.211765, 0.486275)
+energy = 0.41
+range_layer_min = -120
+shadow_enabled = true
+shadow_color = Color(0.917647, 0.984314, 0, 0)
+shadow_item_cull_mask = 0
+texture = ExtResource("2_ugaeb")
+texture_scale = 1.47
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvtx7")
+animation = &"run"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 1080
+position_smoothing_speed = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+layer = 0
+offset = Vector2(500, 50)
+transform = Transform2D(1, 0, 0, 1, 500, 50)
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer"]
+offset_left = -3.0
+offset_top = -11.0
+offset_right = 37.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 29
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(-24, 9)
+texture = ExtResource("3_hoq30")
+region_enabled = true
+region_rect = Rect2(829.889, 263.162, 21.7778, 30.6667)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(126, 14)
+scale = Vector2(0.339743, 0.361539)
+texture = ExtResource("3_hoq30")
+region_enabled = true
+region_rect = Rect2(1699.49, 57.155, 117, 130)
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="Camera2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Camera2D/CanvasLayer3"]
+texture_filter = 2
+position = Vector2(257, 571)
+amount = 100
+lifetime = 100.0
+speed_scale = 11.38
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_max = 5.0
+color_initial_ramp = SubResource("Gradient_iwj73")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Camera2D/CanvasLayer3"]
+texture_filter = 2
+position = Vector2(1700, 634)
+amount = 100
+lifetime = 100.0
+speed_scale = 11.38
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_max = 5.0
+color_initial_ramp = SubResource("Gradient_iwj73")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/CanvasLayer2"]
+position = Vector2(959, 542)
+texture = ExtResource("4_k6jbd")

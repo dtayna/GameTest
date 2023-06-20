@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkrgu4860xrhi"]
+
+[ext_resource type="Script" path="res://larger_thorns.gd" id="1_bjfs1"]
+[ext_resource type="Texture2D" uid="uid://ckg2642jrjwrr" path="res://assets/IMG_0284.PNG" id="2_xyxrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdhis"]
+size = Vector2(233, 25)
+
+[node name="larger_thorns" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_bjfs1")
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(2.5, -2.5)
+shape = SubResource("RectangleShape2D_bdhis")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xyxrj")
+region_enabled = true
+region_rect = Rect2(1157.45, 959.213, 266, 34)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
