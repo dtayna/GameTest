@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dy4quvsrh5weq"]
+[gd_scene load_steps=13 format=3 uid="uid://dy4quvsrh5weq"]
 
 [ext_resource type="PackedScene" uid="uid://bifa0t42rpne4" path="res://larger_platform.tscn" id="1_u8m6g"]
 [ext_resource type="PackedScene" uid="uid://df5dv8qoamj80" path="res://smaller_platform.tscn" id="2_slmwx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ditglr3l44bdc" path="res://stone.tscn" id="9_hejig"]
 [ext_resource type="PackedScene" uid="uid://b5dujjhbdmdm6" path="res://money.tscn" id="10_2pxsl"]
 [ext_resource type="PackedScene" uid="uid://c2w4vc3fovrk6" path="res://helio.tscn" id="11_753xu"]
+[ext_resource type="PackedScene" uid="uid://inqulgbqovu4" path="res://pesinho.tscn" id="12_h5i26"]
 
 [node name="level_1" type="Node2D"]
 light_mask = 3
@@ -41,7 +42,7 @@ position = Vector2(2714, 419)
 position = Vector2(1929, 265)
 
 [node name="player" parent="." instance=ExtResource("3_5v8p7")]
-position = Vector2(462, 632)
+position = Vector2(2224, 454)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_sre0p")]
 
@@ -127,4 +128,7 @@ position = Vector2(3364, 221)
 position = Vector2(3637, 259)
 
 [node name="helio2" parent="." instance=ExtResource("11_753xu")]
-position = Vector2(-105, 513)
+position = Vector2(-92, 799)
+
+[node name="pesinho" parent="." instance=ExtResource("12_h5i26")]
+position = Vector2(3559, 215)

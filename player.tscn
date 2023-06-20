@@ -118,6 +118,12 @@ texture = ExtResource("3_hoq30")
 region_enabled = true
 region_rect = Rect2(1699.49, 57.155, 117, 130)
 
+[node name="Sprite2D3" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(274, 8)
+texture = ExtResource("3_hoq30")
+region_enabled = true
+region_rect = Rect2(111.156, 900.98, 121.307, 53.9144)
+
 [node name="Label" type="Label" parent="Camera2D"]
 offset_right = 40.0
 offset_bottom = 23.0

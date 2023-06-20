@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://inqulgbqovu4"]
+
+[ext_resource type="Script" path="res://pesinho.gd" id="1_g4vtp"]
+[ext_resource type="Texture2D" uid="uid://ckg2642jrjwrr" path="res://assets/IMG_0284.PNG" id="2_qwntx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bsoud"]
+size = Vector2(103, 31)
+
+[node name="pesinho" type="StaticBody2D"]
+script = ExtResource("1_g4vtp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qwntx")
+region_enabled = true
+region_rect = Rect2(118.71, 904.909, 104.642, 47.2578)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_bsoud")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

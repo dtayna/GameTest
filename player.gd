@@ -12,14 +12,17 @@ var jumps = 0
 var desjumps = 0
 var money = 0
 var helio = false
+var peso = false
 
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var _label_wallet = $Camera2D/CanvasLayer/Label
 @onready var _label_die = $Camera2D/Label
 @onready var _sprite_helio = $Camera2D/CanvasLayer/Sprite2D2
+@onready var _sprite_peso = $Camera2D/CanvasLayer/Sprite2D3
 
 func _physics_process(delta):
 	_sprite_helio.visible=helio
+	_sprite_peso.visible=peso
 	
 	var jump = Input.is_action_just_pressed("ui_up")
 	var desjump = Input.is_action_just_pressed("ui_down")
@@ -31,18 +34,17 @@ func _physics_process(delta):
 		_animated_sprite.play("die")
 		collision_mask = 2
 		velocity.y = -200
+		
 	# Add the gravity.
-	if not is_on_floor() and not helio:
+	if not is_on_floor() and (not helio) or peso:
 		velocity.y += gravity * delta
-	elif not is_on_floor() and helio:
+	elif not is_on_floor() and helio and not peso:
 		if get_position().y>=100:
-			velocity.y += -1
+			velocity.y += -gravity * delta
 		else:
-			velocity.y = move_toward(velocity.y, 0, 50)
+			velocity.y = 0
 	
-	if velocity.y==0 and desjumps>=0 and desjump:
-		velocity.y += 200
-		desjumps +=1
+	
 		
 	if is_on_floor():
 		desjumps=0
@@ -57,9 +59,8 @@ func _physics_process(delta):
 		velocity.y = -200
 		jumps=0
 	
-	if desjump and desjumps<2 and not is_on_floor() and helio:
-		print("não no chão",velocity.y)
-		velocity.y += 200
+	if desjump and not is_on_floor() and helio:
+		velocity.y += 600
 		desjumps +=1
 		
 		
@@ -93,3 +94,7 @@ func morehelio():
 	desjumps=0
 	helio=not helio
 	velocity.y = -200
+
+func pesocollet():
+	peso= true
+	#ver como vou descartar depois esse pesinho bu
