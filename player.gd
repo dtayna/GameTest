@@ -14,15 +14,21 @@ var money = 0
 var helio = false
 var peso = false
 
+
 @onready var _animated_sprite = $AnimatedSprite2D
 @onready var _label_wallet = $Camera2D/CanvasLayer/Label
 @onready var _label_die = $Camera2D/Label
 @onready var _sprite_helio = $Camera2D/CanvasLayer/Sprite2D2
 @onready var _sprite_peso = $Camera2D/CanvasLayer/Sprite2D3
+@onready var _timer = $Timer
+	
+	
 
 func _physics_process(delta):
 	_sprite_helio.visible=helio
 	_sprite_peso.visible=peso
+		
+	
 	
 	var jump = Input.is_action_just_pressed("ui_up")
 	var desjump = Input.is_action_just_pressed("ui_down")
@@ -96,5 +102,11 @@ func morehelio():
 	velocity.y = -200
 
 func pesocollet():
+	_timer.start()
 	peso= true
-	#ver como vou descartar depois esse pesinho bu
+	#ver como vou descartar depois esse pesinho bu	
+
+func _on_timer_timeout():
+	print("acabou")
+	peso = false
+	

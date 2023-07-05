@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://dy4quvsrh5weq"]
+[gd_scene load_steps=14 format=3 uid="uid://dy4quvsrh5weq"]
 
+[ext_resource type="Script" path="res://level_1.gd" id="1_bmt02"]
 [ext_resource type="PackedScene" uid="uid://bifa0t42rpne4" path="res://larger_platform.tscn" id="1_u8m6g"]
 [ext_resource type="PackedScene" uid="uid://df5dv8qoamj80" path="res://smaller_platform.tscn" id="2_slmwx"]
 [ext_resource type="PackedScene" uid="uid://bkrgu4860xrhi" path="res://larger_thorns.tscn" id="2_vvfhm"]
@@ -16,6 +17,7 @@
 [node name="level_1" type="Node2D"]
 light_mask = 3
 visibility_layer = 3
+script = ExtResource("1_bmt02")
 
 [node name="thorns" parent="." instance=ExtResource("4_suk53")]
 position = Vector2(1168, 663)
@@ -42,7 +44,7 @@ position = Vector2(2714, 419)
 position = Vector2(1929, 265)
 
 [node name="player" parent="." instance=ExtResource("3_5v8p7")]
-position = Vector2(2224, 454)
+position = Vector2(427, 867)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_sre0p")]
 
@@ -132,3 +134,9 @@ position = Vector2(-92, 799)
 
 [node name="pesinho" parent="." instance=ExtResource("12_h5i26")]
 position = Vector2(3559, 215)
+
+[node name="money12" parent="." instance=ExtResource("10_2pxsl")]
+position = Vector2(3370, 100)
+
+[node name="pesinho2" parent="." instance=ExtResource("12_h5i26")]
+position = Vector2(874, 691)
